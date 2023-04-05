@@ -97,6 +97,10 @@ RUN chmod +x /opt/websafety/bin/* && \
              /etc/service/wsmond/run \
              /etc/service/wssyncd/run \
              /etc/service/apache2/run
+             
+# fix missing log files for wsmond, wsicapd
+RUN touch /var/log/wsmond.log \
+    touch /var/log/wsicapd.log
 
 # assign volumes
 VOLUME ["/opt/websafety/etc"]
