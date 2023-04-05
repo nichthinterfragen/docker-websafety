@@ -100,7 +100,9 @@ RUN chmod +x /opt/websafety/bin/* && \
              
 # fix missing log files for wsmond, wsicapd
 RUN touch /var/log/wsmond.log \
-    touch /var/log/wsicapd.log
+    touch /var/log/wsicapd.log \
+    touch /var/log/wsytgd.log \
+    touch /opt/websafety-ui/var/log/cron_report.log
 
 # assign volumes
 VOLUME ["/opt/websafety/etc"]
