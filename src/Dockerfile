@@ -12,6 +12,7 @@ ENV DDWS_VER 8.3.0.0728
 ENV DDWS_UI_VER 8.3.0.6942
 ENV OSNAME "ubuntu20"
 ENV WEBSAFETY_IN_DOCKER "True"
+ENV TZ "Europe/Berlin"
 
 # install python libs and apache with modwsgi
 RUN apt-get update && apt-get upgrade -y -o Dpkg::Options::="--force-confold" && \
@@ -94,6 +95,7 @@ RUN chmod +x /opt/websafety/bin/* && \
              /etc/service/wsgsbd/run \
              /etc/service/wsytgd/run \
              /etc/service/wsmond/run \
+             /etc/service/wssyncd/run \
              /etc/service/apache2/run
 
 # assign volumes
